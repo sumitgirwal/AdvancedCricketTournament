@@ -252,7 +252,7 @@ class Match:
         self.team1.bowlers = self.team1.players.copy()
         self.team2.bowlers = self.team2.players.copy()
 
-        self.commentator.describe_game(self.team1.captain.name, self.team2.captain.name, self.team1.name, self.team2.name, over=5)
+        self.commentator.describe_game(self.team1.captain.name, self.team2.captain.name, self.team1.name, self.team2.name, over=self.total_overs)
 
         # Team 1 playing    
         self.commentator.describe_start(self.team1.name)
