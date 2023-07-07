@@ -197,7 +197,7 @@ class Commentator:
         """
         Provide a description of the end of an innings.
         """
-        print(f"\n\nFinal Run: {self.umpire.scores} Wicket: {self.umpire.wickets} Overs: {self.umpire.overs-1}")
+        print(f"\n\nFinal Run: {self.umpire.scores} Wicket: {self.umpire.wickets} Overs: {self.umpire.overs}")
         print("\n---------------------------------------------\n")
 
     
@@ -264,6 +264,7 @@ class Match:
         # Team 2 playing    
         self.commentator.umpire.scores = 0
         self.commentator.umpire.wickets = 0
+        self.commentator.umpire.overs = 0
         self.commentator.describe_start(self.team2.name)
         self.play_innings(self.team2, self.team1)
         self.commentator.describe_end()
@@ -335,6 +336,6 @@ team2 = Team("Country2", player2)
 field = Field("Large", 0.7, 0.8, 0.9)
 
 # starting match simulation
-total_overs = 1
+total_overs = 2
 match = Match(team1, team2, field, total_overs)
 match.start_match()
